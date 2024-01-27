@@ -1,48 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>Displaying a Map with a BaseMap Style ComboBox (3 points)</title>
-    <!-- Style Sheet from ArcGIS -->
-    <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
-    <!-- Personal Style Sheet-->
-    <link rel="stylesheet" href="styling.css">
-    <script src="https://js.arcgis.com/4.28/"></script>
 
-    <!-- Calcite Components Scripting-->
-    <script type="module" src="https://js.arcgis.com/calcite-components/1.9.2/calcite.esm.js"></script>
-    <!-- Calcite Components Styling -->
-    <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/calcite-components/1.9.2/calcite.css" />
-    <!-- Personal Script -->
-    <script src="main.js" defer></script>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Displaying a Map with a BaseMap Style ComboBox (3 points)</title>
+  <!-- Style Sheet from ArcGIS -->
+  <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
+  <!-- ArcGIS Script -->
+  <script src="https://js.arcgis.com/4.28/"></script>
+  <!-- Calcite Components Scripting-->
+  <script type="module" src="https://js.arcgis.com/calcite-components/1.9.2/calcite.esm.js"></script>
+  <!-- Calcite Components Styling -->
+  <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/calcite-components/1.9.2/calcite.css" />
+
+  <!-- Personal Script -->
+  <script src="main.js" defer></script>
+  <!-- Personal Style Sheet-->
+  <link rel="stylesheet" href="styling.css">
 </head>
+
 <body>
-    <h1>Displaying a Map with a BaseMap Style ComboBox (3 points)</h1>
-    <div id="viewDiv"></div>
-    <div id="basemapStyles" class="esri-widget">
-        <calcite-label>Basemap style</calcite-label>
-        <!-- Default combobox item is osm/standard -->
-        <calcite-combobox id="styleCombobox" selection-mode="single" clear-disabled value="osm/standard">
-          <calcite-combobox-item value="arcgis/navigation" text-label="Navigation"></calcite-combobox-item>
-          <calcite-combobox-item value="arcgis/navigation-night" text-label="Navigation Night"></calcite-combobox-item>
-          <!-- Default value is the osm/standard value, note the "selected" case -->
-          <calcite-combobox-item value="osm/standard" text-label="Standard" selected></calcite-combobox-item>
-          <calcite-combobox-item value="arcgis/streets" text-label="Streets"></calcite-combobox-item>
-          <calcite-combobox-item value="arcgis/streets-relief" text-label="Streets Relief"></calcite-combobox-item>
-          <calcite-combobox-item value="arcgis/streets-night" text-label="Streets Night"></calcite-combobox-item>
-          <calcite-combobox-item value="arcgis/outdoor" text-label="Outdoor"></calcite-combobox-item>
-          <calcite-combobox-item value="arcgis/imagery" text-label="Imagery"></calcite-combobox-item>
-          <calcite-combobox-item value="arcgis/topographic" text-label="Topographic"></calcite-combobox-item>
-          <calcite-combobox-item value="arcgis/terrain" text-label="Terrain"></calcite-combobox-item>
-          <calcite-combobox-item value="arcgis/oceans" text-label="Oceans"></calcite-combobox-item>
-          <calcite-combobox-item value="arcgis/charted-territory" text-label="Charted Territory"></calcite-combobox-item>
-          <calcite-combobox-item value="arcgis/colored-pencil" text-label="Coloured Pencil"></calcite-combobox-item>
-          <calcite-combobox-item value="arcgis/newspaper" text-label="Newspaper"></calcite-combobox-item>
-          <calcite-combobox-item value="osm/standard-relief" text-label="Standard Relief"></calcite-combobox-item>
-        </calcite-combobox>
-      </div>
-    
+  <h1>Displaying a Map with a BaseMap Style ComboBox (3 points)</h1>
+  <div id="viewDiv"></div>
+  <div id="basemapStyles" class="esri-widget">
+    <calcite-label>Basemap style</calcite-label>
+    <!-- Default combobox item is osm/standard -->
+    <calcite-combobox id="styleCombobox" selection-mode="single" clear-disabled value="osm/standard">
+      <calcite-combobox-item value="arcgis/navigation" text-label="Navigation"></calcite-combobox-item>
+      <calcite-combobox-item value="arcgis/navigation-night" text-label="Navigation Night"></calcite-combobox-item>
+      <!-- Default value is the osm/standard value, note the "selected" case -->
+      <calcite-combobox-item value="osm/standard" text-label="Standard" selected></calcite-combobox-item>
+      <calcite-combobox-item value="arcgis/streets" text-label="Streets"></calcite-combobox-item>
+      <calcite-combobox-item value="arcgis/streets-relief" text-label="Streets Relief"></calcite-combobox-item>
+      <calcite-combobox-item value="arcgis/streets-night" text-label="Streets Night"></calcite-combobox-item>
+      <calcite-combobox-item value="arcgis/outdoor" text-label="Outdoor"></calcite-combobox-item>
+      <calcite-combobox-item value="arcgis/imagery" text-label="Imagery"></calcite-combobox-item>
+      <calcite-combobox-item value="arcgis/topographic" text-label="Topographic"></calcite-combobox-item>
+      <calcite-combobox-item value="arcgis/terrain" text-label="Terrain"></calcite-combobox-item>
+      <calcite-combobox-item value="arcgis/oceans" text-label="Oceans"></calcite-combobox-item>
+      <calcite-combobox-item value="arcgis/charted-territory" text-label="Charted Territory"></calcite-combobox-item>
+      <calcite-combobox-item value="arcgis/colored-pencil" text-label="Coloured Pencil"></calcite-combobox-item>
+      <calcite-combobox-item value="arcgis/newspaper" text-label="Newspaper"></calcite-combobox-item>
+      <calcite-combobox-item value="osm/standard-relief" text-label="Standard Relief"></calcite-combobox-item>
+    </calcite-combobox>
+  </div>
+
 </body>
 
 </html>
