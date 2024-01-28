@@ -28,6 +28,7 @@ require([
   // Create a new MapView object with specified properties
   const view = new MapView({
     map: map,
+    // The URL used above was only for 
     // center: [18.384580252731308, -33.917565440496], // Longitude, latitude
     center: [-118.80543, 34.02700], //Longitude, latitude
     zoom: 13, // Zoom level
