@@ -12,10 +12,28 @@ require([
     basemap: "arcgis/topographic" // basemap styles service
   });
 
+   //Trailheads feature layer (points)
+  const trailheadsLayer = new FeatureLayer({
+    url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trailheads/FeatureServer/0"
+  });
+
+  const trailsLayer = new FeatureLayer({
+    url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trails/FeatureServer/0"
+  });
+
+  const parksLayer = new FeatureLayer({
+    url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Parks_and_Open_Space/FeatureServer/0"
+  });
+
+  map.add(parksLayer, 0);
+  map.add(trailsLayer, 0);
+  map.add(trailheadsLayer);
+
   // Create a new map view with specified properties
   const view = new MapView({
     map: map,
-    center: [18.384580252731308, -33.917565440496], // Longitude, latitude
+    // center: [18.384580252731308, -33.917565440496], // Longitude, latitude
+    center: [-118.80543,34.02700], //Longitude, latitude
     zoom: 13, // Zoom level
     container: "viewDiv" // Div element
   });
@@ -37,7 +55,7 @@ require([
     symbol: {
       type: "text",
       color: [255, 0, 89],
-      haloColor: [255, 0, 89],
+      haloColor: "#ffffff",
       haloSize: "2px",
       font: {
         size: "12px",
@@ -93,21 +111,6 @@ require([
   // Add the layer
   map.add(trails, 0);
 
-  // //Trailheads feature layer (points)
-  // const trailheadsLayer = new FeatureLayer({
-  //   url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trailheads/FeatureServer/0"
-  // });
-
-  // const trailsLayer = new FeatureLayer({
-  //   url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trails/FeatureServer/0"
-  // });
-
-  // const parksLayer = new FeatureLayer({
-  //   url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Parks_and_Open_Space/FeatureServer/0"
-  // });
-
-  // map.add(parksLayer, 0);
-  // map.add(trailsLayer, 0);
-  // map.add(trailheadsLayer);
+ 
 });
 
